@@ -20,10 +20,17 @@ class TestBowlingGame(unittest.TestCase):
         ok = self.game.roll(12)
         assert ok == -1
 
+    """
     def testGutterGame(self):
         for i in range(0, 20):
+            self.game.roll(0) 
+            assert self.game.score()==0
+    """
+    def testGutterGame(self):
+        for i in range(0,0):
             self.game.roll(0)
-        assert self.game.score()==0
+            assert ok == 0
+        
     def testAllOnes(self):
         self.rollMany(1, 20)
         assert self.game.score()==20
