@@ -42,18 +42,22 @@ class TestBowlingGame(unittest.TestCase):
         for i in range(1, 20):
           self.game.roll(13) 
           assert ok == 0
+          
+    def testOneStrike(self):
+        ok = self.game.roll(0) 
+        for i in range(1, 20):
+           self.game.roll(17) 
+           assert ok == 0
+              
+        
+        
+   
+
         
         
        
    
           
-    """def testOneSpare(self):
-       
-        self.game.roll(5)
-        self.game.roll(5)
-        self.game.roll(3)
-        self.rollMany(0,17)
-        
-    """
+    
        
 
