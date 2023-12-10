@@ -27,13 +27,23 @@ class TestBowlingGame(unittest.TestCase):
             assert self.game.score()==0
     """
     def testGutterGame(self):
+        ok = self.game.roll(0)
         for i in range(0,0):
             self.game.roll(0)
             assert ok == 0
-        
+            
+    """    
     def testAllOnes(self):
         self.rollMany(1, 20)
         assert self.game.score()==20
+    """
+    
+    def test_all_ones(self):
+        self.game = BowlingGame.BowlingGame()
+        self.rollMany("1",20)    
+        game = TestBowlingGame(self.rollMany("1", 20))
+        self.assertEqual(game.score(), 20)
+        
     def testOneSpare(self):
         self.game.roll(5)
         self.game.roll(5)
