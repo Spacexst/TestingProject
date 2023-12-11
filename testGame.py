@@ -13,9 +13,11 @@ class TestBowlingGame(unittest.TestCase):
     def testRollsBetween0And10(self):
         ok = self.game.roll(3)
         assert ok == 0
+        
     def testRollsNegative(self):
         ok = self.game.roll(-5)
         assert ok == -1
+        
     def testRollsTooMany(self):
         ok = self.game.roll(12)
         assert ok == -1
@@ -43,11 +45,43 @@ class TestBowlingGame(unittest.TestCase):
           self.game.roll(13) 
           assert ok == 0
           
-    def testOneStrike(self):
+    def test_one_strike(self):
         ok = self.game.roll(0) 
         for i in range(1, 20):
            self.game.roll(17) 
            assert ok == 0
+           
+    
+
+    def test_perfect_game(self):
+        ok = self.game.roll(0) 
+        # Arrange
+        for _ in range(12):
+            self.game.roll(300)
+            assert ok == 0
+       
+    def test_perfect_game(self):
+        ok = self.game.roll(0) 
+        # Arrange
+        for _ in range(12):
+            self.game.roll(320)
+            assert ok ==0
+        
+    
+
+    
+    
+           
+   
+   
+   
+       
+
+   
+            
+    
+    
+        
               
         
         
