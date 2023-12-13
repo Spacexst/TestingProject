@@ -15,7 +15,7 @@ class BowlingGame:
         
         for frameIndex in range(10):
             # if frameIndex in range(10):
-            if frameIndex in range(8):
+            if frameIndex in range(10):
                 if self.isStrike(rollIndex):
                     result += self.strikeScore(rollIndex)
                     rollIndex += 1
@@ -35,12 +35,16 @@ class BowlingGame:
         return self.rolls[rollIndex]+ self.rolls[rollIndex+1]==10
     
     def strikeScore(self,rollIndex):
-        return  10+ self.rolls[rollIndex+1]+ self.rolls[rollIndex+2]
+        score = 10 + self.rolls[rollIndex+1]
+        if rollIndex < 9:
+            score += self.rolls[rollIndex+2]
+        else:
+            score += self.rolls[10]
+        return score
 
     def spareScore(self,rollIndex):
         return  10+ self.rolls[rollIndex+2]
 
     def frameScore(self, rollIndex):
         return self.rolls[rollIndex] + self.rolls[rollIndex + 1]
-
-          
+              
