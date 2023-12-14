@@ -65,10 +65,10 @@ class TestBowlingGame(unittest.TestCase):
         assert self.game.score() == 300
     
     def testManySpares(self):
-      '''check that a game of all spares produces the correct score'''
-      for rolls in range(21):
-        self.game.roll(5)
-      assert self.game.score() == 150
+        '''check that a game of all spares produces the correct score'''
+        for rolls in range(21):
+            self.game.roll(5)
+        assert self.game.score() == 150
                 
     
    
