@@ -4,7 +4,6 @@
 import unittest
 import BowlingGame
 
-
 class TestBowlingGame(unittest.TestCase):
 
     def setUp(self):
@@ -25,7 +24,7 @@ class TestBowlingGame(unittest.TestCase):
         ok = self.game.roll(12)
         assert ok == -1
     
-    def testGutterFrame(self)
+    def testGutterFrame(self):
         '''check that a frame with two gutter balls has a score of zero'''
         zeroScore1 = self.game.roll(0)
         zeroScore2 = self.game.roll(0)
@@ -57,7 +56,6 @@ class TestBowlingGame(unittest.TestCase):
         self.game.roll(10)
         assert self.game.isStrike(0) == True
 
-    
     def testPerfectGame(self):
         '''check that a game of all strikes produces the correct score'''
         for i in range(11):
